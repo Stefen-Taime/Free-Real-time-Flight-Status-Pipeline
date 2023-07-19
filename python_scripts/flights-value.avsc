@@ -1,0 +1,153 @@
+{
+  "type": "record",
+  "name": "Flight",
+  "fields": [
+    {
+      "name": "flight_date",
+      "type": ["null", "string"],
+      "default": null
+    },
+    {
+      "name": "flight_status",
+      "type": ["null", "string"],
+      "default": null
+    },
+    {
+      "name": "departure",
+      "type": {
+        "type": "record",
+        "name": "Departure",
+        "fields": [
+          {"name": "airport", "type": ["null", "string"], "default": null},
+          {"name": "timezone", "type": ["null", "string"], "default": null},
+          {"name": "iata", "type": ["null", "string"], "default": null},
+          {"name": "icao", "type": ["null", "string"], "default": null},
+          {"name": "terminal", "type": ["null", "string"], "default": null},
+          {"name": "gate", "type": ["null", "string"], "default": null},
+          {"name": "delay", "type": ["null", "string"], "default": null},
+          {"name": "scheduled", "type": ["null", "string"], "default": null},
+          {"name": "estimated", "type": ["null", "string"], "default": null},
+          {"name": "actual", "type": ["null", "string"], "default": null},
+          {"name": "estimated_runway", "type": ["null", "string"], "default": null},
+          {"name": "actual_runway", "type": ["null", "string"], "default": null}
+        ]
+      },
+      "default": {
+        "airport": null,
+        "timezone": null,
+        "iata": null,
+        "icao": null,
+        "terminal": null,
+        "gate": null,
+        "delay": null,
+        "scheduled": null,
+        "estimated": null,
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      }
+    },
+    {
+      "name": "arrival",
+      "type": {
+        "type": "record",
+        "name": "Arrival",
+        "fields": [
+          {"name": "airport", "type": ["null", "string"], "default": null},
+          {"name": "timezone", "type": ["null", "string"], "default": null},
+          {"name": "iata", "type": ["null", "string"], "default": null},
+          {"name": "icao", "type": ["null", "string"], "default": null},
+          {"name": "terminal", "type": ["null", "string"], "default": null},
+          {"name": "gate", "type": ["null", "string"], "default": null},
+          {"name": "baggage", "type": ["null", "string"], "default": null},
+          {"name": "delay", "type": ["null", "string"], "default": null},
+          {"name": "scheduled", "type": ["null", "string"], "default": null},
+          {"name": "estimated", "type": ["null", "string"], "default": null},
+          {"name": "actual", "type": ["null", "string"], "default": null},
+          {"name": "estimated_runway", "type": ["null", "string"], "default": null},
+          {"name": "actual_runway", "type": ["null", "string"], "default": null}
+        ]
+      },
+      "default": {
+        "airport": null,
+        "timezone": null,
+        "iata": null,
+        "icao": null,
+        "terminal": null,
+        "gate": null,
+        "baggage": null,
+        "delay": null,
+        "scheduled": null,
+        "estimated": null,
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      }
+    },
+    {
+      "name": "airline",
+      "type": {
+        "type": "record",
+        "name": "Airline",
+        "fields": [
+          {"name": "name", "type": ["null", "string"], "default": null},
+          {"name": "iata", "type": ["null", "string"], "default": null},
+          {"name": "icao", "type": ["null", "string"], "default": null}
+        ]
+      },
+      "default": {
+        "name": null,
+        "iata": null,
+        "icao": null
+      }
+    },
+    {
+      "name": "flight",
+      "type": {
+        "type": "record",
+        "name": "FlightInfo",
+        "fields": [
+          {"name": "number", "type": ["null", "string"], "default": null},
+          {"name": "iata", "type": ["null", "string"], "default": null},
+          {"name": "icao", "type": ["null", "string"], "default": null},
+          {
+            "name": "codeshared",
+            "type": {
+              "type": "record",
+              "name": "Codeshared",
+              "fields": [
+                {"name": "airline_name", "type": ["null", "string"], "default": null},
+                {"name": "airline_iata", "type": ["null", "string"], "default": null},
+                {"name": "airline_icao", "type": ["null", "string"], "default": null},
+                {"name": "flight_number", "type": ["null", "string"], "default": null},
+                {"name": "flight_iata", "type": ["null", "string"], "default": null},
+                {"name": "flight_icao", "type": ["null", "string"], "default": null}
+              ]
+            },
+            "default": {
+              "airline_name": null,
+              "airline_iata": null,
+              "airline_icao": null,
+              "flight_number": null,
+              "flight_iata": null,
+              "flight_icao": null
+            }
+          }
+        ]
+      },
+      "default": {
+        "number": null,
+        "iata": null,
+        "icao": null,
+        "codeshared": {
+          "airline_name": null,
+          "airline_iata": null,
+          "airline_icao": null,
+          "flight_number": null,
+          "flight_iata": null,
+          "flight_icao": null
+        }
+      }
+    }
+  ]
+}
